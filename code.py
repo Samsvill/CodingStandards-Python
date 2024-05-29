@@ -1,4 +1,4 @@
-class My_class:
+class Myclass:
     def __init__(self):
         self.my_fav = {'Paris': 500, 'NYC': 600}
     
@@ -32,7 +32,7 @@ class Passenger:
 
 class Plane:
     def __init__(self, dest, num, dur):
-        self.myclass = My_class()
+        self.myclass = Myclass()
         self.passenger = Passenger(num)
         self.total_time = TotalTime(dur)
         self.dest = dest
@@ -73,7 +73,7 @@ class Vacation:
     cost_base = 1000
 
     def __init__(self, dest, num, dur):
-        self.myclass = My_class()
+        self.myclass = Myclass()
         self.passenger = Passenger(num)
         self.total_time = TotalTime(dur)
         self.dest = dest
