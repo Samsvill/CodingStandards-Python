@@ -1,4 +1,4 @@
-class myclass:
+class My_class:
     def __init__(self):
         self.my_fav = {'Paris': 500, 'NYC': 600}
     
@@ -8,7 +8,7 @@ class myclass:
     def valid_this(self, dest):
         return isinstance(dest, str)
 
-class passenger:
+class Passenger:
     def __init__(self, num):
         self.num = num
     
@@ -32,8 +32,8 @@ class passenger:
 
 class Plane:
     def __init__(self, dest, num, dur):
-        self.myclass = myclass()
-        self.passenger = passenger(num)
+        self.myclass = My_class()
+        self.passenger = Passenger(num)
         self.total_time = TotalTime(dur)
         self.dest = dest
         self.seats = 200
@@ -73,8 +73,8 @@ class Vacation:
     cost_base = 1000
 
     def __init__(self, dest, num, dur):
-        self.myclass = myclass()
-        self.passenger = passenger(num)
+        self.myclass = My_class()
+        self.passenger = Passenger(num)
         self.total_time = TotalTime(dur)
         self.dest = dest
 
