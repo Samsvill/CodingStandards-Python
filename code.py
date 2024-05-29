@@ -51,64 +51,66 @@ class Plane:
         number_total = number_total - (number_total * discount)
         
         return max(int(number_total), 0)
-        
+
 class TotalTime:
     def __init__(self, dur):
         self.dur = dur
-    
+
     def is_valid_total_time(self):
         return isinstance(self.dur, int) and self.dur > 0
-    
+
     def get_fee(self):
         return 200 if self.dur < 7 else 0
-    
+
     def get_the_best_promo_ever(self):
         return 200 if self.dur > 30 else 0
     
     def get_weekend(self):
         return 100 if self.dur > 7 else 0
-
+    
 
 class Vacation:
     cost_base = 1000
-    
+
     def __init__(self, dest, num, dur):
         self.myclass = myclass()
         self.passenger = passenger(num)
         self.total_time = TotalTime(dur)
         self.dest = dest
-        
-    def sum(self):
 
+    def sum(self):
+        #sum the cost of the vacation package here
         if not self.myclass.valid_this(self.dest) or not self.passenger.validnumber() or not self.total_time.is_valid_total_time():
-        return -1
+            return -1
         
         #sum the total cost
         number_total = self.cost_base
         number_total += self.myclass.get_extra_cost(self.dest)
         number_total += self.total_time.get_fee()
         number_total -= self.total_time.get_the_best_promo_ever() | self.passenger.promotion_policy_passenger()
-        
+
         discount = self.passenger.for_here_discount()
         number_total = number_total - (number_total * discount)
-    
+        
         return max(int(number_total), 0)
 
-
+#this is main function
 def main():
     #this are the inputs
     dest = "Paris"
     num = 2
     dur = 31
 
+    #this are the outputs
     calculator = Vacation(dest, num, dur)
     cost = calculator.sum()
 
+    #this will do some printing
     if cost == -1:
-    print("Invalid input.")
+        print("Invalid input.")
     else:
-    print(f"The total cost of the vacation package is: ${cost}")
+        print(f"The total cost of the vacation package is: ${cost}")
 
-    if __name__ == "__main__":
+#main event function
+if __name__ == "__main__":
     main()
-    
