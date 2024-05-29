@@ -28,7 +28,7 @@ class Passenger:
         else:
             return 0.0
     def promotion_policy_passenger (self):
-        return 200 if self.num == 2 else 0.0
+        return 200 if self.num == 2 else 0
 
 class Plane:
     def __init__(self, dest, num, dur):
