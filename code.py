@@ -79,11 +79,10 @@ class Vacation:
         self.dest = dest
 
     def sum(self):
-        #sum the cost of the vacation package here
+        
         if not self.myclass.valid_this(self.dest) or not self.passenger.validnumber() or not self.total_time.is_valid_total_time():
             return -1
         
-        #sum the total cost
         number_total = self.cost_base
         number_total += self.myclass.get_extra_cost(self.dest)
         number_total += self.total_time.get_fee()
@@ -94,18 +93,16 @@ class Vacation:
         
         return max(int(number_total), 0)
 
-#this is main function
+
 def main():
-    #this are the inputs
+   
     dest = "Paris"
     num = 2
     dur = 31
 
-    #this are the outputs
     calculator = Vacation(dest, num, dur)
     cost = calculator.sum()
 
-    #this will do some printing
     if cost == -1:
         print("Invalid input.")
     else:
